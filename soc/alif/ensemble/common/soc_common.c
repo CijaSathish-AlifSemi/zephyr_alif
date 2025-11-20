@@ -154,8 +154,11 @@ static int soc_init(void)
 #endif
 
 #if DT_NODE_HAS_STATUS(DT_NODELABEL(sdhc), okay)
-	/* Enable CFG (100 MHz and 20MHz) clock.*/
+	/* Enable CFG (100 MHz and 20MHz) clock.*/ //for E7-HP
 	sys_set_bits(CGU_CLK_ENA, BIT(21) | BIT(22));
+
+	//for E8-HP
+	sys_set_bits(CGU_CLK_ENA, BIT(7) | BIT(22));
 
 	/* Peripheral clock enable */
 	sys_set_bits(EXPMST_PERIPH_CLK_EN, BIT(16));
