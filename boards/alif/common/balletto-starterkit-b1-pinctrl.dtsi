@@ -158,6 +158,26 @@
 			driver-state-control = <2>; /* pull-down */
 		};
 	};
+	
+	pinctrl_uart_ext_a: pinctrl_uart_ext_a {
+		group0 {
+			pinmux = <PIN_P4_0__EXT_RX_A>,
+				 <PIN_P3_7__EXT_CTS_A>;
+		};
+		group1 {
+			pinmux = <PIN_P4_1__EXT_TX_A>,
+				 <PIN_P3_6__EXT_RTS_A>;
+			read-enable = <0x0>;
+		};
+	};
+	pinctrl_ahi_trace: pinctrl_ahi_trace {
+		group0 {
+			pinmux = <PIN_P4_1__EXT_TX_A>,
+				 <PIN_P3_6__EXT_RTS_A>,
+				 <PIN_P4_2__EXT_TRACE_A>;
+			read-enable = <0x0>;
+		};
+	};
 
 	pinctrl_lpuart: pinctrl_lpuart {
 		group0 {
